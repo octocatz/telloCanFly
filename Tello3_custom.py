@@ -42,17 +42,23 @@ print ('end -- quit demo.\r\n')
 
 
 sent = sock.sendto(b'command', tello_address)
+print ("command")
 sent = sock.sendto(b'takeoff', tello_address)
+print ("takeoff")
 sleep(5)
-sent = sock.sendto(b'forward', tello_address)
+sent = sock.sendto(b'forward 100', tello_address)
+print ("forward 100")
 sleep(5)
-#sent = sock.sendto(b'flip', tello_address)
-#sleep(5)
-#sent = sock.sendto(b'back', tello_address)
-#sleep(5)
+sent = sock.sendto(b'flip f', tello_address)
+print ("flip f")
+sleep(5)
+sent = sock.sendto(b'back 100', tello_address)
+print ("back 100")
+sleep(5)
 sent = sock.sendto(b'land', tello_address)
 
 #recvThread create
+'''
 recvThread = threading.Thread(target=recv)
 recvThread.start()
 
@@ -78,6 +84,6 @@ while True:
         sock.close()  
         break
 
-
+'''
 
 
