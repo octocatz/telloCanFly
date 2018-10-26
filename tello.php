@@ -11,9 +11,12 @@
 <h3>tello exec</h3>
 <?php
 
-$exec_cmd = "./Tello3_custom.py";
-exec($exec_cmd,$out2,$ret2);
+$exec_cmd = "python ./Tello3_custom.py";
+exec($exec_cmd,$out,$ret);
+print $out;
+print $ret;
 
 ?>
-/body>
+</body>
 </html>
+
